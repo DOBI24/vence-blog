@@ -11,40 +11,44 @@
 </head>
 <body>
     <header id="header">
-        <h1 class="header-grid-item-title">Vence</h1>
-        <nav class="header-grid-item-navbar">
-            <div class="nav-grid-items">
-                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-grid-item">
+        <div class="header-flex-row-1">
+            <h1 class="header-grid-item-title"><a href="">Vence</a></h1>
+            <nav class="header-grid-item-navbar">
+                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-item">
                     Home
                 </div>
-                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-grid-item nav-dropdown">
+                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-item nav-dropdown">
                     Inspiration
                 </div>
-                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-grid-item nav-dropdown">
+                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-item nav-dropdown">
                     Courses
                 </div>
-                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-grid-item">
+                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-item">
                     Blog
                 </div>
-            </div>
-            <div class="nav-spacer"></div>
-            <div class="nav-search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 12 13" fill="none">
-                    <path d="M11.8368 10.3765L9.49991 8.03965C9.39444 7.93417 9.25146 7.87558 9.10145 7.87558H8.71939C9.36631 7.04817 9.75071 6.00747 9.75071 4.87536C9.75071 2.18219 7.56852 0 4.87536 0C2.18219 0 0 2.18219 0 4.87536C0 7.56852 2.18219 9.75071 4.87536 9.75071C6.00747 9.75071 7.04817 9.36631 7.87558 8.71939V9.10145C7.87558 9.25146 7.93417 9.39444 8.03965 9.49991L10.3765 11.8368C10.5969 12.0571 10.9531 12.0571 11.1711 11.8368L11.8345 11.1735C12.0548 10.9531 12.0548 10.5969 11.8368 10.3765ZM4.87536 7.87558C3.2182 7.87558 1.87514 6.53485 1.87514 4.87536C1.87514 3.2182 3.21586 1.87514 4.87536 1.87514C6.53251 1.87514 7.87558 3.21586 7.87558 4.87536C7.87558 6.53251 6.53485 7.87558 4.87536 7.87558Z" fill="#F8F9FA" fill-opacity="0.5"/>
-                </svg>
-            </div>
-        </nav>
-        <div class="header-grid-item-main">
+                <div class="nav-divider"></div>
+                <div class="nav-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 -6 20 20" fill="none">
+                        <path d="M11.8368 10.3765L9.49991 8.03965C9.39444 7.93417 9.25146 7.87558 9.10145 7.87558H8.71939C9.36631 7.04817 9.75071 6.00747 9.75071 4.87536C9.75071 2.18219 7.56852 0 4.87536 0C2.18219 0 0 2.18219 0 4.87536C0 7.56852 2.18219 9.75071 4.87536 9.75071C6.00747 9.75071 7.04817 9.36631 7.87558 8.71939V9.10145C7.87558 9.25146 7.93417 9.39444 8.03965 9.49991L10.3765 11.8368C10.5969 12.0571 10.9531 12.0571 11.1711 11.8368L11.8345 11.1735C12.0548 10.9531 12.0548 10.5969 11.8368 10.3765ZM4.87536 7.87558C3.2182 7.87558 1.87514 6.53485 1.87514 4.87536C1.87514 3.2182 3.21586 1.87514 4.87536 1.87514C6.53251 1.87514 7.87558 3.21586 7.87558 4.87536C7.87558 6.53251 6.53485 7.87558 4.87536 7.87558Z" fill="#F8F9FA" fill-opacity="0.5"/>
+                    </svg>
+                </div>
+            </nav>
+        </div>
+        <div class="header-flex-row-2">
             <time>29.Jun.2022</time>
             <h2>
                 I Like to Keep Things Simple to Appreciate the Details
             </h2>
-        <p>
-            Many years ago, I worked for my parents who own a video production company.
-        </p>
+            <p class="subtitle">
+                Many years ago, I worked for my parents who own a video production company.
+            </p>
         </div>
-        <div class="slider header-grid-item-slider">
-            slider
+        <div class="header-flex-row-3 slider">
+            <div class="slider-line">
+            </div>
+            <div id="slider-index">
+                1/5
+            </div>
         </div>
     </header>
     <main>
