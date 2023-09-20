@@ -1,11 +1,3 @@
-const fetchData = async (url) => {
-    const response = await fetch(url)
-    const data = await response.json()
-    document.getElementById("header").style.backgroundImage =  "url("+ data.photo.url +")"
-}
-
-fetchData('https://api.slingacademy.com/v1/sample-data/photos/35')
-
 var r = document.querySelector(':root');
 var rs = getComputedStyle(r);
 function hoverAction(item, isSelected){
@@ -20,3 +12,11 @@ function hoverAction(item, isSelected){
     item.style.border = "none"
     item.style.color = rs.getPropertyValue('--white_hard')
 }
+
+const setHeaderBG = async (url) => {
+    const response = await fetch(url)
+    const data = await response.json()
+    document.getElementById("header").style.backgroundImage =  "url("+ data.photo.url +")"
+}
+
+setHeaderBG('https://api.slingacademy.com/v1/sample-data/photos/35')
