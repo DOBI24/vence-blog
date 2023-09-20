@@ -12,6 +12,7 @@ a, a:link, a:visited, a:active, a:hover{
 }
 
 /* HEADER GRID LAYOUT*/
+
 header{
     height: 800px;
     display: flex;
@@ -64,6 +65,8 @@ h1::after{
     color: var(--brown);
     content: ".";
 }
+
+/* -------------- */
 
 /* NAVBAR GRID LAYOUT */
 nav{
