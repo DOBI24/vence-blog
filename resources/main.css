@@ -93,7 +93,6 @@ main{
     color: var(--black_light);
     font-size: 0.9rem;
     margin: 15px 0 15px 0;
-    /*margin-bottom: 15px;*/
 }
 
 .card-user{
