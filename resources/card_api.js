@@ -1,8 +1,9 @@
 let urls = {
     "img" : ["https://api.slingacademy.com/v1/sample-data/photos?offset=80&limit=9", "photos"],
     "name" : ["https://api.slingacademy.com/v1/sample-data/users?limit=9", "users"],
-    "blogpost" : ["https://api.slingacademy.com/v1/sample-data/blog-posts?limit=9", "blogs"],
+    "blogpost" : ["https://api.slingacademy.com/v1/sample-data/blog-posts?offset=150&limit=9", "blogs"],
 }
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 const getCardInformation = async () => {
     let datas = new Map()
@@ -10,8 +11,6 @@ const getCardInformation = async () => {
         let data = await fetchData(urls[key][0])
         datas.set(key, data[urls[key][1]])
     }
-    console.log(datas)
-    //
     const container = document.getElementById("cards-container")
     for (let i = 0; i < 9; i++) {
         const cardFrameNode = document.createElement("div")
@@ -21,13 +20,13 @@ const getCardInformation = async () => {
         const userNode = document.createElement("div")
         const categoryNode = document.createElement("div")
         const dateNode = document.createElement("time")
+        const date = new Date(datas.get("blogpost")[i].created_at)
 
         addTextNodeToNode(titleNode, datas.get("blogpost")[i].title)
         addTextNodeToNode(descriptionNode, datas.get("blogpost")[i].description)
         addTextNodeToNode(userNode, "By: " + datas.get("name")[i].first_name + " " + datas.get("name")[i].last_name)
         addTextNodeToNode(categoryNode, datas.get("blogpost")[i].category)
-        addTextNodeToNode(dateNode, datas.get("blogpost")[i].created_at)
-        // datas.get("img")[i].url
+        addTextNodeToNode(dateNode, ("0"+date.getDate()).slice(-2)+"."+months[date.getMonth()].substring(0,3)+"."+date.getFullYear())
 
         cardFrameNode.setAttribute("class", "card-frame")
         titleNode.setAttribute("class", "card-title")
@@ -38,6 +37,7 @@ const getCardInformation = async () => {
         dateNode.setAttribute("class", "card-date")
 
         imgFrame.appendChild(categoryNode)
+        imgFrame.style.backgroundImage = "url("+ datas.get("img")[i].url +")"
 
         cardFrameNode.appendChild(imgFrame)
         cardFrameNode.appendChild(dateNode)
