@@ -26,6 +26,7 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: center;
+    transition: background-image 0.3s ease-in-out;
 }
 
 .header-flex-row-1{
@@ -147,10 +148,16 @@ h2{
 
 .slider-line{
     width: 100px;
-    height: 1px;
-    background-color: var(--white_light);
+    height: 5px;
+    background-color: var(--black_light);
+    /*background-image: linear-gradient(rgba(255, 255, 0), rgba(0, 0, 255), );*/
     border-radius: 1rem;
     align-self: center;
+}
+
+#header-slider-line{
+    background-color: var(--white_light);
+    width: 100%;
 }
 
 /* -------------- */
