@@ -54,6 +54,7 @@ main{
     flex-direction: row;
     justify-content: flex-end;
     background-size: cover;
+    margin-bottom: 30px;
 }
 
 .card-category{
@@ -75,7 +76,6 @@ main{
     font-weight: 300;
     color: var(--black_light);
     font-size: 0.9rem;
-    margin-top: 30px;
     margin-bottom: 15px;
 }
 
@@ -102,6 +102,122 @@ main{
     font-size: 0.9rem;
     border-top: 1px solid var(--white_light);
     padding-top: 15px;
+}
+
+/* -------------- */
+
+/* MORE CARDS BUTTON */
+
+.more-cards{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: var(--black_hard);
+    align-self: center;
+    padding: 15px 55px 15px 55px;
+    border-radius: 5px;
+    color: var(--white_hard);
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+/* -------------- */
+
+/* FEATURED TOPICS LAYOUT */
+
+.featured-topics-box{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 800px;
+}
+
+.topics-cards-box{
+    width: 50%;
+    /*background-color: var(--black_hard);*/
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+}
+
+.topics-cards{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.topics-image-slider{
+    background-color: #DDBEA9;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------------- */
+
+/* TOPICS IMAGE SLIDER */
+
+.topics-slider{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.topics-image-title{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--white_hard);
+}
+
+.topics-image-description{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: var(--white_light);
+}
+
+/* -------------- */
+
+/* TOPICS CARDS */
+
+.topics-cards-title{
+    color: var(--white_hard);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.topics-cards-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.topics-card{
+    display: flex;
+}
+
+.topics-card-image{
+    background-image: url("https://api.slingacademy.com/public/sample-photos/35.jpeg");
+    height: 100%;
+    width: 100%;
+}
+
+.topics-card-date{
+    color: var(--white_light);
+}
+
+.topics-card-title{
+    color: var(--white_hard);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.topics-card-description{
+    color: var(--white_light);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
 }
 
 /* -------------- */

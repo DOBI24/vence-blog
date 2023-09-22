@@ -6,6 +6,7 @@ footer{
     flex-direction: column;
     justify-content: space-evenly;
     background-color: var(--black_hard);
+    margin-top: 100px;
 }
 
 .footer-flex-row-1{
