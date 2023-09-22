@@ -40,15 +40,15 @@ main{
     width: 80%;
     align-self: center;
     justify-content: space-between;
-    grid-gap: 60px;
     grid-auto-rows: 0;
     overflow-y: hidden;
-    height: auto;
+    height: 50%;
 }
 
 .card-frame{
     display: flex;
     flex-direction: column;
+    margin-bottom: 60px;
 }
 
 .card-frame:hover{
@@ -120,7 +120,7 @@ main{
 
 /* MORE CARDS BUTTON */
 
-.more-cards{
+#more-cards{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     background-color: var(--black_hard);
@@ -128,8 +128,11 @@ main{
     padding: 15px 55px 15px 55px;
     border-radius: 5px;
     color: var(--white_hard);
-    margin-top: 60px;
     margin-bottom: 100px;
+}
+
+#more-cards:hover{
+    cursor: pointer;
 }
 
 /* -------------- */

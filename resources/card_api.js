@@ -1,7 +1,8 @@
+let maxBlogPost = 12
 let urls = {
-    "img" : ["https://api.slingacademy.com/v1/sample-data/photos?offset=80&limit=9", "photos"],
-    "name" : ["https://api.slingacademy.com/v1/sample-data/users?limit=9", "users"],
-    "blogpost" : ["https://api.slingacademy.com/v1/sample-data/blog-posts?offset=150&limit=9", "blogs"],
+    "img" : ["https://api.slingacademy.com/v1/sample-data/photos?offset=80&limit="+maxBlogPost, "photos"],
+    "name" : ["https://api.slingacademy.com/v1/sample-data/users?limit="+maxBlogPost, "users"],
+    "blogpost" : ["https://api.slingacademy.com/v1/sample-data/blog-posts?offset=150&limit="+maxBlogPost, "blogs"],
 }
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -12,7 +13,7 @@ const getCardInformation = async () => {
         datas.set(key, data[urls[key][1]])
     }
     const container = document.getElementById("cards-container")
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < maxBlogPost; i++) {
         const cardFrameNode = document.createElement("div")
         const titleNode = document.createElement("div")
         const imgFrame = document.createElement("div")
