@@ -179,12 +179,12 @@ main{
     width: 60%;
 }
 
-.topics-image-slider{
-    background-color: #DDBEA9;
+#topics-image-slider{
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover;
 }
 
 /* -------------- */
@@ -196,6 +196,11 @@ main{
     flex-direction: row;
     justify-content: center;
     gap: 10px;
+}
+
+#topics-slider-line{
+    background-color: var(--white_light);
+    width: 100%;
 }
 
 .topics-image-title{

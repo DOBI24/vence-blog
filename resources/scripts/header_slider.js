@@ -6,16 +6,7 @@ const setHeaderBG = async () => {
     const data = await response.json()
 
     slideHeader(data)
-    document.getElementById("header-slider-line").animate(
-        [
-            { width: '0'},
-            { width: '100%'}
-        ],
-        {
-            duration: sliderTime*1000,
-            iterations: Infinity
-        }
-    )
+    setInterval(slideHeader, sliderTime*1000, data)
 }
 
 function slideHeader(data){
@@ -23,8 +14,16 @@ function slideHeader(data){
     document.getElementById("header-slider-index").innerHTML = (headerSliderID+1)+"/5"
     headerSliderID++
     if (headerSliderID === 5) headerSliderID = 0
-
-    setTimeout(slideHeader, sliderTime*1000, data);
+    document.getElementById("header-slider-line").animate(
+        [
+            { width: '0'},
+            { width: '100%'}
+        ],
+        {
+            duration: sliderTime*1000,
+            iterations: 1
+        }
+    )
 }
 
 setHeaderBG()
