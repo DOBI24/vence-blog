@@ -228,7 +228,7 @@ main{
     margin-bottom: 60px;
 }
 
-.topics-cards-card{
+#topics-cards-card{
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -262,6 +262,7 @@ main{
     font-weight: 500;
     font-size: 1.2rem;
     margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .topics-card-description{
