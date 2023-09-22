@@ -36,15 +36,27 @@ main{
 #cards-container{
     display: grid;
     grid-template-columns: 30% 30% 30%;
+    grid-template-rows: repeat(2, 1fr);
     width: 80%;
     align-self: center;
     justify-content: space-between;
     grid-gap: 60px;
+    grid-auto-rows: 0;
+    overflow-y: hidden;
+    height: auto;
 }
 
 .card-frame{
     display: flex;
     flex-direction: column;
+}
+
+.card-frame:hover{
+    cursor: pointer;
+}
+
+.card-frame:hover .card-title{
+    color: #CCD5AE;
 }
 
 .card-img{
@@ -133,8 +145,7 @@ main{
 
 .topics-cards-box{
     width: 50%;
-    /*background-color: var(--black_hard);*/
-    background-color: brown;
+    background-color: var(--black_hard);
     display: flex;
     flex-direction: column;
 }
@@ -145,6 +156,7 @@ main{
     align-self: center;
     justify-content: center;
     height: 100%;
+    width: 60%;
 }
 
 .topics-image-slider{
@@ -187,21 +199,32 @@ main{
     color: var(--white_hard);
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    font-size: 1.8rem;
+    margin-bottom: 60px;
 }
 
 .topics-cards-card{
     display: flex;
     flex-direction: column;
+    gap: 40px;
 }
 
 .topics-card{
     display: flex;
+    gap: 30px;
+    height: 150px;
 }
 
 .topics-card-image{
     background-image: url("https://api.slingacademy.com/public/sample-photos/35.jpeg");
+    background-size: cover;
     height: 100%;
-    width: 100%;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.topics-card-details{
+    width: 70%;
 }
 
 .topics-card-date{
@@ -212,12 +235,12 @@ main{
     color: var(--white_hard);
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
 }
 
 .topics-card-description{
     color: var(--white_light);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
 }
 
 /* -------------- */
