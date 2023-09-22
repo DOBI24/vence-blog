@@ -7,25 +7,27 @@
     <link href="header.css" type="text/css" rel="stylesheet" />
     <link href="main.css" type="text/css" rel="stylesheet" />
     <link href="footer.css" type="text/css" rel="stylesheet" />
-    <script src="script.js" type="text/javascript"></script>
-    <script src="card_api.js" type="text/javascript"></script>
-    <script src="more_card_button.js" type="text/javascript"></script>
+    <script src="scripts/set_header_bg.js" type="text/javascript"></script>
+    <script src="scripts/card_api.js" type="text/javascript"></script>
+    <script src="scripts/more_card_button.js" type="text/javascript"></script>
+    <script src="scripts/nav_hover_action.js" type="text/javascript"></script>
+    <script src="scripts/change_column.js" type="text/javascript"></script>
 </head>
 <body>
     <header id="header">
         <div class="header-flex-row-1">
             <h1 class="header-grid-item-title"><a href="">Vence</a></h1>
             <nav class="header-grid-item-navbar">
-                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-item">
+                <div onmouseover="navHoverAction(this, true)" onmouseout="navHoverAction(this, false)" class="nav-item">
                     Home
                 </div>
-                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-item nav-dropdown">
+                <div onmouseover="navHoverAction(this, true)" onmouseout="navHoverAction(this, false)" class="nav-item nav-dropdown">
                     Inspiration
                 </div>
-                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-item nav-dropdown">
+                <div onmouseover="navHoverAction(this, true)" onmouseout="navHoverAction(this, false)" class="nav-item nav-dropdown">
                     Courses
                 </div>
-                <div onmouseover="hoverAction(this, true)" onmouseout="hoverAction(this, false)" class="nav-item">
+                <div onmouseover="navHoverAction(this, true)" onmouseout="navHoverAction(this, false)" class="nav-item">
                     Blog
                 </div>
                 <div class="nav-divider"></div>
@@ -58,9 +60,16 @@
             <div class="main-card-filter">
                 <div>Categories +</div>
                 <div class="column-selector">
-                    <div>3 Column</div>
-                    <div>4 Column</div>
+                    <div>
+                        <input id="3-col" name="grid_col" type="radio" class="column-selector-radio" onclick="changeCardGridColumn(this)" checked>
+                        <label for="3-col" class="column-selector-label">3 Column</label>
+                    </div>
+                    <div>
+                        <input id="4-col" name="grid_col" type="radio" class="column-selector-radio" onclick="changeCardGridColumn(this)">
+                        <label for="4-col" class="column-selector-label">4 Column</label>
+                    </div>
                 </div>
+
             </div>
             <div id="cards-container">
                 <!--<div class="card-frame">

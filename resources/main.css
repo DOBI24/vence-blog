@@ -29,20 +29,37 @@ main{
     width: 12%;
 }
 
+.column-selector-radio{
+    display: none;
+}
+
+.column-selector-label{
+    opacity: 0.5;
+    padding: 10px;
+}
+
+.column-selector-label:hover{
+    cursor: pointer;
+}
+
+.column-selector-radio:checked ~ .column-selector-label{
+    opacity: 1;
+}
+
 /* -------------- */
 
 /* CARDS LAYOUT */
 
 #cards-container{
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
     width: 80%;
     align-self: center;
     justify-content: space-between;
     grid-auto-rows: 0;
     overflow-y: hidden;
-    height: 50%;
 }
 
 .card-frame{

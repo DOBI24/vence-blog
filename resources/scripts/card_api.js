@@ -1,4 +1,4 @@
-let maxBlogPost = 12
+let maxBlogPost = 15
 let urls = {
     "img" : ["https://api.slingacademy.com/v1/sample-data/photos?offset=80&limit="+maxBlogPost, "photos"],
     "name" : ["https://api.slingacademy.com/v1/sample-data/users?limit="+maxBlogPost, "users"],
