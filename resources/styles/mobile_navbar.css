@@ -1,6 +1,7 @@
-/* NAVBAR FLEX LAYOUT */
-.mobile-grid-item-navbar{
-    grid-row: 1 / span 2;
+/* MOBILE NAVBAR LAYOUT */
+
+#mobile-grid-item-navbar{
+    grid-row: 1;
     grid-column: 2;
     display: none;
     flex-direction: row;
@@ -11,95 +12,49 @@
 }
 
 .mobile-nav-selector{
-
     display: flex;
     position: absolute;
-}
-
-
-
-
-
-
-.nav-item{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    color: var(--white_hard);
-    justify-self: center;
-    opacity: 0.5;
-}
-
-.nav-item:hover{
-    opacity: 1;
-    border-bottom: 3px solid var(--brown);
-    border-radius: 1px;
-    cursor: pointer;
-}
-
-.nav-dropdown-item::after{
-    display: inline-block;
-    content: url("../assets/dropdown.svg");
-    margin-left: 5px;
-}
-
-.nav-dropdown{
-    position: absolute;
-    opacity: 1;
-    display: none;
+    z-index: 2;
     flex-direction: column;
+    height: 60%;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.mobile-nav-selector div{
+    align-self: end;
+    margin-right: 10px;
+    height: 2px;
+    background-color: var(--white_light);
+    border-radius: 2px;
+    width: 40%;
+    transition: all 0.3s ease-in-out;
+}
+
+.mobile-nav-selector input{
+    opacity: 0;
+    position: absolute;
+    align-self: end;
+    width: 40%;
+    height: 32px;
+}
+
+#mobile-nav-selector-input:checked ~ div{
+    background-color: var(--brown);
+}
+
+#mobile-grid-items{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: space-evenly;
     background-color: var(--black_hard);
-    border-radius: 7px;
-    padding: 10px 20px;
-}
-
-.nav-dropdown-item:hover{
-    border: none;
-}
-
-.nav-dropdown-item:hover .nav-dropdown{
-    display: flex;
-}
-
-.nav-dropdown a{
-    color: var(--white_hard);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    opacity: 0.6;
-    height: 100%;
-    padding: 10px 0;
-}
-
-.nav-dropdown a:hover{
-    opacity: 1;
-}
-
-.nav-divider{
-    height: 10%;
-    opacity: 0.5;
-    border: 1px solid var(--white_light);
-    border-radius: 1rem;
-}
-
-.nav-search{
-    display: flex;
-}
-
-.nav-search-input{
-    width: 0;
-    border: none;
-    background-color: var(--white_hard);
-    opacity: 0.5;
     border-radius: 5px;
-    outline: none;
-    color: var(--black_hard);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    transition: all 1s ease-in-out;
-}
-
-.nav-search:hover .nav-search-input{
-    padding: 5%;
-    width: 100px;
+    padding: 60px 30px;
+    z-index: 1;
+    right: -300%;
+    transition: all 0.5s ease-in-out;
 }
 
 /* -------------- */

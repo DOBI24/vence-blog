@@ -17,6 +17,7 @@
     <script src="scripts/topics_slider.js" type="text/javascript"></script>
     <script src="scripts/Card.js" type="text/javascript"></script>
     <script src="scripts/set_cards_place.js" type="text/javascript"></script>
+    <script src="scripts/show_mobile_navbar.js" type="text/javascript"></script>
 </head>
 <body>
     <picture id="header-bg-1"></picture>
@@ -59,36 +60,31 @@
                         <input type="text" class="nav-search-input">
                     </div>
                 </nav>
-            <nav class="mobile-grid-item-navbar">
-                    <div class="mobile-nav-selector" onclick="">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
-                            <path fill="#F8F9FA" d="M 5.5 9 A 1.50015 1.50015 0 1 0 5.5 12 L 42.5 12 A 1.50015 1.50015 0 1 0 42.5 9 L 5.5 9 z M 5.5 22.5 A 1.50015 1.50015 0 1 0 5.5 25.5 L 42.5 25.5 A 1.50015 1.50015 0 1 0 42.5 22.5 L 5.5 22.5 z M 5.5 36 A 1.50015 1.50015 0 1 0 5.5 39 L 42.5 39 A 1.50015 1.50015 0 1 0 42.5 36 L 5.5 36 z"></path>
-                        </svg>
+            <nav id="mobile-grid-item-navbar">
+                <div class="mobile-nav-selector" >
+                    <input type="checkbox" id="mobile-nav-selector-input" onclick="showMobileNavbar()" />
+                    <div></div>
+                    <div></div>
+                    <div></div>
+<!--                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48" >-->
+<!--                        <g id="mobile-nav-selector-svg">-->
+<!--                            <path fill="#F8F9FA" d="M 5.5 9 A 1.50015 1.50015 0 1 0 5.5 12 L 42.5 12 A 1.50015 1.50015 0 1 0 42.5 9 L 5.5 9 z M 5.5 22.5 A 1.50015 1.50015 0 1 0 5.5 25.5 L 42.5 25.5 A 1.50015 1.50015 0 1 0 42.5 22.5 L 5.5 22.5 z M 5.5 36 A 1.50015 1.50015 0 1 0 5.5 39 L 42.5 39 A 1.50015 1.50015 0 1 0 42.5 36 L 5.5 36 z"></path>-->
+<!--                        </g>-->
+<!--                    </svg>-->
+                </div>
+                <div id="mobile-grid-items">
+                    <div class="nav-item">
+                        Home
                     </div>
-<!--                    <div class="nav-item">-->
-<!--                        Home-->
-<!--                    </div>-->
-<!--                    <div class="nav-item nav-dropdown-item">-->
-<!--                        Inspiration-->
-<!--                        <div class="nav-dropdown">-->
-<!--                            <a href="">Digital Products</a>-->
-<!--                            <a href="">New Trend</a>-->
-<!--                            <a href="">Graphic Arts</a>-->
-<!--                            <a href="">Web Design</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="nav-item nav-dropdown-item">-->
-<!--                        Courses-->
-<!--                        <div class="nav-dropdown">-->
-<!--                            <a href="#">Digital Products</a>-->
-<!--                            <a href="#">New Trend</a>-->
-<!--                            <a href="#">Graphic Arts</a>-->
-<!--                            <a href="#">Web Design</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="nav-item">-->
-<!--                        Blog-->
-<!--                    </div>-->
+                    <div class="nav-item">
+                        Inspiration
+                    </div>
+                    <div class="nav-item">
+                        Courses
+                    </div>
+                    <div class="nav-item">
+                        Blog
+                    </div>
 <!--                    <div class="nav-divider"></div>-->
 <!--                    <div class="nav-search">-->
 <!--                        <div class="nav-search-svg">-->
@@ -98,7 +94,8 @@
 <!--                        </div>-->
 <!--                        <input type="text" class="nav-search-input">-->
 <!--                    </div>-->
-                </nav>
+                </div>
+            </nav>
             <div class="header-flex-main">
                 <time>29.Jun.2022</time>
                 <h2>
