@@ -1,9 +1,9 @@
 let headerSliderID = 0
-let sliderTime = 3 //sec
+let sliderTime = 10 //sec
 let bgID = true
 
 const setHeaderBG = async () => {
-    const response = await fetch("https://api.slingacademy.com/v1/sample-data/photos?offset=110&limit=5")
+    const response = await fetch("https://api.slingacademy.com/v1/sample-data/photos?offset=114&limit=5")
     const data = await response.json()
 
     slideHeader(data)
