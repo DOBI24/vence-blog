@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VENCE Technology Blog</title>
-    <link href="variables.css" type="text/css" rel="stylesheet">
-    <link href="header.css" type="text/css" rel="stylesheet" />
-    <link href="main.css" type="text/css" rel="stylesheet" />
-    <link href="footer.css" type="text/css" rel="stylesheet" />
+    <link href="styles/variables.css" type="text/css" rel="stylesheet">
+    <link href="styles/header.css" type="text/css" rel="stylesheet" />
+    <link href="styles/mobile_navbar.css" type="text/css" rel="stylesheet" />
+    <link href="styles/main.css" type="text/css" rel="stylesheet" />
+    <link href="styles/footer.css" type="text/css" rel="stylesheet" />
+    <link href="styles/media_queries.css" type="text/css" rel="stylesheet" />
     <script src="scripts/header_slider.js" type="text/javascript"></script>
     <script src="scripts/card_api.js" type="text/javascript"></script>
     <script src="scripts/more_card_button.js" type="text/javascript"></script>
@@ -16,61 +19,101 @@
     <script src="scripts/set_cards_place.js" type="text/javascript"></script>
 </head>
 <body>
+    <picture id="header-bg-1"></picture>
+    <picture id="header-bg-2"></picture>
     <header id="header">
-        <div id="header-bg-1"></div>
-        <div id="header-bg-2"></div>
-        <div class="header-flex-row-1">
+        <div>
             <h1 class="header-grid-item-title"><a href="">Vence</a></h1>
             <nav class="header-grid-item-navbar">
-                <div class="nav-item">
-                    Home
-                </div>
-                <div class="nav-item nav-dropdown-item">
-                    Inspiration
-                    <div class="nav-dropdown">
-                        <a href="">Digital Products</a>
-                        <a href="">New Trend</a>
-                        <a href="">Graphic Arts</a>
-                        <a href="">Web Design</a>
+                    <div class="nav-item">
+                        Home
                     </div>
-                </div>
-                <div class="nav-item nav-dropdown-item">
-                    Courses
-                    <div class="nav-dropdown">
-                        <a href="#">Digital Products</a>
-                        <a href="#">New Trend</a>
-                        <a href="#">Graphic Arts</a>
-                        <a href="#">Web Design</a>
+                    <div class="nav-item nav-dropdown-item">
+                        Inspiration
+                        <div class="nav-dropdown">
+                            <a href="">Digital Products</a>
+                            <a href="">New Trend</a>
+                            <a href="">Graphic Arts</a>
+                            <a href="">Web Design</a>
+                        </div>
                     </div>
-                </div>
-                <div class="nav-item">
-                    Blog
-                </div>
-                <div class="nav-divider"></div>
-                <div class="nav-search">
-                    <div class="nav-search-svg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 -6 20 20" fill="none" >
-                            <path d="M11.8368 10.3765L9.49991 8.03965C9.39444 7.93417 9.25146 7.87558 9.10145 7.87558H8.71939C9.36631 7.04817 9.75071 6.00747 9.75071 4.87536C9.75071 2.18219 7.56852 0 4.87536 0C2.18219 0 0 2.18219 0 4.87536C0 7.56852 2.18219 9.75071 4.87536 9.75071C6.00747 9.75071 7.04817 9.36631 7.87558 8.71939V9.10145C7.87558 9.25146 7.93417 9.39444 8.03965 9.49991L10.3765 11.8368C10.5969 12.0571 10.9531 12.0571 11.1711 11.8368L11.8345 11.1735C12.0548 10.9531 12.0548 10.5969 11.8368 10.3765ZM4.87536 7.87558C3.2182 7.87558 1.87514 6.53485 1.87514 4.87536C1.87514 3.2182 3.21586 1.87514 4.87536 1.87514C6.53251 1.87514 7.87558 3.21586 7.87558 4.87536C7.87558 6.53251 6.53485 7.87558 4.87536 7.87558Z" fill="#F8F9FA" fill-opacity="0.5"/>
+                    <div class="nav-item nav-dropdown-item">
+                        Courses
+                        <div class="nav-dropdown">
+                            <a href="#">Digital Products</a>
+                            <a href="#">New Trend</a>
+                            <a href="#">Graphic Arts</a>
+                            <a href="#">Web Design</a>
+                        </div>
+                    </div>
+                    <div class="nav-item">
+                        Blog
+                    </div>
+                    <div class="nav-divider"></div>
+                    <div class="nav-search">
+                        <div class="nav-search-svg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 -6 20 20" fill="none" >
+                                <path d="M11.8368 10.3765L9.49991 8.03965C9.39444 7.93417 9.25146 7.87558 9.10145 7.87558H8.71939C9.36631 7.04817 9.75071 6.00747 9.75071 4.87536C9.75071 2.18219 7.56852 0 4.87536 0C2.18219 0 0 2.18219 0 4.87536C0 7.56852 2.18219 9.75071 4.87536 9.75071C6.00747 9.75071 7.04817 9.36631 7.87558 8.71939V9.10145C7.87558 9.25146 7.93417 9.39444 8.03965 9.49991L10.3765 11.8368C10.5969 12.0571 10.9531 12.0571 11.1711 11.8368L11.8345 11.1735C12.0548 10.9531 12.0548 10.5969 11.8368 10.3765ZM4.87536 7.87558C3.2182 7.87558 1.87514 6.53485 1.87514 4.87536C1.87514 3.2182 3.21586 1.87514 4.87536 1.87514C6.53251 1.87514 7.87558 3.21586 7.87558 4.87536C7.87558 6.53251 6.53485 7.87558 4.87536 7.87558Z" fill="#F8F9FA" fill-opacity="0.5"/>
+                            </svg>
+                        </div>
+                        <input type="text" class="nav-search-input">
+                    </div>
+                </nav>
+            <nav class="mobile-grid-item-navbar">
+                    <div class="mobile-nav-selector" onclick="">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 48 48">
+                            <path fill="#F8F9FA" d="M 5.5 9 A 1.50015 1.50015 0 1 0 5.5 12 L 42.5 12 A 1.50015 1.50015 0 1 0 42.5 9 L 5.5 9 z M 5.5 22.5 A 1.50015 1.50015 0 1 0 5.5 25.5 L 42.5 25.5 A 1.50015 1.50015 0 1 0 42.5 22.5 L 5.5 22.5 z M 5.5 36 A 1.50015 1.50015 0 1 0 5.5 39 L 42.5 39 A 1.50015 1.50015 0 1 0 42.5 36 L 5.5 36 z"></path>
                         </svg>
                     </div>
-                    <input type="text" class="nav-search-input">
-                </div>
-            </nav>
-        </div>
-        <div class="header-flex-row-2">
-            <time>29.Jun.2022</time>
-            <h2>
-                I Like to Keep Things Simple to Appreciate the Details
-            </h2>
-            <p class="subtitle">
-                Many years ago, I worked for my parents who own a video production company.
-            </p>
-        </div>
-        <div class="header-flex-row-3">
-            <div class="slider-line">
-                <div class="slider-line" id="header-slider-line"></div>
+<!--                    <div class="nav-item">-->
+<!--                        Home-->
+<!--                    </div>-->
+<!--                    <div class="nav-item nav-dropdown-item">-->
+<!--                        Inspiration-->
+<!--                        <div class="nav-dropdown">-->
+<!--                            <a href="">Digital Products</a>-->
+<!--                            <a href="">New Trend</a>-->
+<!--                            <a href="">Graphic Arts</a>-->
+<!--                            <a href="">Web Design</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="nav-item nav-dropdown-item">-->
+<!--                        Courses-->
+<!--                        <div class="nav-dropdown">-->
+<!--                            <a href="#">Digital Products</a>-->
+<!--                            <a href="#">New Trend</a>-->
+<!--                            <a href="#">Graphic Arts</a>-->
+<!--                            <a href="#">Web Design</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="nav-item">-->
+<!--                        Blog-->
+<!--                    </div>-->
+<!--                    <div class="nav-divider"></div>-->
+<!--                    <div class="nav-search">-->
+<!--                        <div class="nav-search-svg">-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 -6 20 20" fill="none" >-->
+<!--                                <path d="M11.8368 10.3765L9.49991 8.03965C9.39444 7.93417 9.25146 7.87558 9.10145 7.87558H8.71939C9.36631 7.04817 9.75071 6.00747 9.75071 4.87536C9.75071 2.18219 7.56852 0 4.87536 0C2.18219 0 0 2.18219 0 4.87536C0 7.56852 2.18219 9.75071 4.87536 9.75071C6.00747 9.75071 7.04817 9.36631 7.87558 8.71939V9.10145C7.87558 9.25146 7.93417 9.39444 8.03965 9.49991L10.3765 11.8368C10.5969 12.0571 10.9531 12.0571 11.1711 11.8368L11.8345 11.1735C12.0548 10.9531 12.0548 10.5969 11.8368 10.3765ZM4.87536 7.87558C3.2182 7.87558 1.87514 6.53485 1.87514 4.87536C1.87514 3.2182 3.21586 1.87514 4.87536 1.87514C6.53251 1.87514 7.87558 3.21586 7.87558 4.87536C7.87558 6.53251 6.53485 7.87558 4.87536 7.87558Z" fill="#F8F9FA" fill-opacity="0.5"/>-->
+<!--                            </svg>-->
+<!--                        </div>-->
+<!--                        <input type="text" class="nav-search-input">-->
+<!--                    </div>-->
+                </nav>
+            <div class="header-flex-main">
+                <time>29.Jun.2022</time>
+                <h2>
+                    I Like to Keep Things Simple to Appreciate the Details
+                </h2>
+                <p class="subtitle">
+                    Many years ago, I worked for my parents who own a video production company.
+                </p>
             </div>
-            <div id="header-slider-index" class="slider-index"></div>
+            <div class="header-flex-slider">
+                <div class="slider-line">
+                    <div class="slider-line" id="header-slider-line"></div>
+                </div>
+                <div id="header-slider-index" class="slider-index"></div>
+            </div>
         </div>
     </header>
     <main>

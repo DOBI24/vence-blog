@@ -1,4 +1,4 @@
-let maxBlogPost = 15
+let maxBlogPost = 20
 let urls = {
     "img" : ["https://api.slingacademy.com/v1/sample-data/photos?offset=80&limit="+maxBlogPost, "photos"],
     "name" : ["https://api.slingacademy.com/v1/sample-data/users?limit="+maxBlogPost, "users"],
@@ -11,7 +11,6 @@ const getCardInformation = async () => {
     let imgData = await fetchData(urls["img"][0])
     let nameData = await fetchData(urls["name"][0])
     let blogpostData = await fetchData(urls["blogpost"][0])
-
 
     for (let i = 0; i < maxBlogPost; i++) {
         cardsArray.push(new Card(

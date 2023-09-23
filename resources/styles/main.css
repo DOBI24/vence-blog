@@ -60,6 +60,7 @@ main{
     justify-content: space-between;
     grid-auto-rows: 0;
     overflow-y: hidden;
+    transition: all 1s linear;
 }
 
 .card-frame{
@@ -211,6 +212,7 @@ main{
 }
 
 .topics-image-description{
+    text-align: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     color: var(--white_light);
@@ -238,6 +240,10 @@ main{
     display: flex;
     gap: 30px;
     height: 150px;
+}
+
+.topics-card div:nth-child(2){
+    width: 70%;
 }
 
 .topics-card-image{
@@ -297,6 +303,7 @@ main{
     width: 80%;
     align-self: center;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .footer-card-title{
