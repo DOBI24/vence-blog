@@ -17,16 +17,30 @@ a, a:link, a:visited, a:active, a:hover{
 
 /* HEADER FLEX LAYOUT*/
 
+#header-bg-1, #header-bg-2{
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    transition: all 1s ease-in-out;
+    z-index: -1;
+}
+
+#header-bg-1{
+}
+
+#header-bg-2{
+}
+
 header{
     height: 800px;
     display: flex;
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: center;
-    transition: background-image 0.3s ease-in-out;
+    overflow: hidden;
 }
 
 .header-flex-row-1{
@@ -44,6 +58,10 @@ header{
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: auto auto auto;
+    position: relative;
+    animation-name: header-texts;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
 }
 
 .header-flex-row-3{
@@ -79,6 +97,10 @@ nav{
     justify-content: space-evenly;
     width: 30%;
     align-items: center;
+    position: relative;
+    animation-name: navbar;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
 }
 
 .nav-item{
@@ -144,11 +166,6 @@ nav{
     display: flex;
 }
 
-.nav-search label{
-
-}
-
-
 .nav-search-input{
     width: 0;
     border: none;
@@ -176,6 +193,7 @@ header time{
     color: var(--white_light);
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
+    position: relative;
 }
 
 h2{
@@ -185,6 +203,7 @@ h2{
     font-size: 2.8rem;
     margin-bottom: 20px;
     grid-column: 1;
+    position: relative;
 }
 
 .subtitle{
@@ -193,6 +212,7 @@ h2{
     font-weight: 300;
     font-size: 1rem;
     grid-column: 1;
+    position: relative;
 }
 
 /* -------------- */
@@ -218,6 +238,20 @@ h2{
 #header-slider-line{
     background-color: var(--white_light);
     width: 100%;
+}
+
+/* -------------- */
+
+/* ANIMATIONS */
+
+@keyframes header-texts {
+    from {left: -100%;}
+    to {left: 0;}
+}
+
+@keyframes navbar {
+    from {left: 100%;}
+    to {left: 0;}
 }
 
 /* -------------- */
