@@ -1,16 +1,3 @@
-/* MOBILE NAVBAR LAYOUT */
-
-#mobile-grid-item-navbar{
-    grid-row: 1;
-    grid-column: 2;
-    display: none;
-    flex-direction: row;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    justify-content: end;
-}
-
 .mobile-nav-selector{
     display: flex;
     position: absolute;
@@ -56,5 +43,3 @@
     right: -300%;
     transition: all 0.5s ease-in-out;
 }
-
-/* -------------- */

@@ -1,5 +1,3 @@
-/* MEDIA QUERIES */
-
 @media screen and (min-width: 1001px) and (max-width: 1500px) {
     header > div{
         grid-template-columns: 40% 60%;
@@ -75,7 +73,6 @@
     }
 }
 
-/* MOBILE SCREEN */
 @media screen and (max-width: 767px) {
     .header-grid-item-navbar{
         display: none;

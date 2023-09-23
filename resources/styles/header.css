@@ -2,134 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-}
-
-body{
-    background-color: var(--white_hard);
-}
-
-a, a:link, a:visited, a:active, a:hover{
-    text-decoration: none;
-}
-
-/* HEADER FLEX LAYOUT*/
-
-#header-bg-1, #header-bg-2{
-    position: absolute;
-    width: 100%;
-    height: 800px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: center;
-    z-index: -1;
-}
-
-header{
-    height: 800px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-}
-
-header > div{
-    display: grid;
-    height: 90%;
-    width: 80%;
-    grid-template-rows: 10% 80% 10%;
-    grid-template-columns: 70% 30%;
-    align-self: center;
-}
-
-.header-flex-main{
-    grid-row: 2;
-    grid-column: 1;
-    width: 100%;
-    align-self: end;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    animation-name: header-texts;
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-}
-
-.header-flex-slider{
-    grid-row: 3;
-    grid-column: 2;
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    justify-content: end;
-    gap: 10px;
-}
-
-h1{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-}
-
-h1 a{
-    color: var(--white_hard);
-}
-
-h1::after{
-    color: var(--brown);
-    content: ".";
-}
-
-/* -------------- */
-
-/* NAVBAR FLEX LAYOUT */
-.header-grid-item-navbar{
-    grid-row: 1;
-    grid-column: 2;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-self: end;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    animation-name: navbar;
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-}
-
-.nav-item{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    color: var(--white_hard);
-    justify-self: center;
-    opacity: 0.5;
-}
-
 .nav-item:hover{
     opacity: 1;
     border-bottom: 3px solid var(--brown);
     border-radius: 1px;
     cursor: pointer;
-}
-
-.nav-dropdown-item::after{
-    display: inline-block;
-    content: url("../assets/dropdown.svg");
-    margin-left: 5px;
-}
-
-.nav-dropdown{
-    position: absolute;
-    opacity: 1;
-    display: none;
-    flex-direction: column;
-    background-color: var(--black_hard);
-    border-radius: 7px;
-    padding: 10px 20px;
 }
 
 .nav-dropdown-item:hover{
@@ -153,94 +30,10 @@ h1::after{
     opacity: 1;
 }
 
-.nav-divider{
-    height: 10%;
-    opacity: 0.5;
-    border: 1px solid var(--white_light);
-    border-radius: 1rem;
-}
-
-.nav-search{
-    display: flex;
-}
-
-.nav-search-input{
-    width: 0;
-    border: none;
-    background-color: var(--white_hard);
-    opacity: 0.5;
-    border-radius: 5px;
-    outline: none;
-    color: var(--black_hard);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    transition: all 1s ease-in-out;
-}
-
 .nav-search:hover .nav-search-input{
     padding: 5%;
     width: 100px;
 }
-
-/* -------------- */
-
-/* HEADER MAIN LAYOUT */
-
-header time{
-    grid-column: 1;
-    color: var(--white_light);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    position: relative;
-}
-
-h2{
-    color: var(--white_hard);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    grid-column: 1 / span 2;
-    position: relative;
-}
-
-.subtitle{
-    color: var(--white_light);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    font-size: 1rem;
-    grid-column: 1;
-    position: relative;
-}
-
-/* -------------- */
-
-/* SLIDER LAYOUT */
-
-.slider-index{
-    color: var(--white_light);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-    letter-spacing: 3px;
-}
-
-.slider-line{
-    width: 100px;
-    height: 5px;
-    background-color: var(--black_light);
-    /*background-image: linear-gradient(rgba(255, 255, 0), rgba(0, 0, 255), );*/
-    border-radius: 1rem;
-    align-self: center;
-}
-
-#header-slider-line{
-    background-color: var(--white_light);
-    width: 100%;
-}
-
-/* -------------- */
-
-/* ANIMATIONS */
 
 @keyframes header-texts {
     from {left: -100%;}
@@ -251,5 +44,3 @@ h2{
     from {left: 100%;}
     to {left: 0;}
 }
-
-/* -------------- */
