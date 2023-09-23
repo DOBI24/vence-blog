@@ -12,7 +12,8 @@ const getCardInformation = async () => {
     let nameData = await fetchData(urls["name"][0])
     let blogpostData = await fetchData(urls["blogpost"][0])
 
-    for (let i = 0; i <maxBlogPost; i++) {
+
+    for (let i = 0; i < maxBlogPost; i++) {
         cardsArray.push(new Card(
             imgData.photos[i].url,
             new Date(blogpostData.blogs[i].created_at),
@@ -24,6 +25,7 @@ const getCardInformation = async () => {
     }
     setMainCards()
     setFeaturedTopicsCards()
+    setFooterCards()
 }
 
 function addTextNodeToNode(node, text){

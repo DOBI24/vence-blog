@@ -11,7 +11,7 @@ function setMainCards(){
 
         addTextNodeToNode(titleNode, cardsArray[i].title)
         addTextNodeToNode(descriptionNode, cardsArray[i].description)
-        addTextNodeToNode(userNode, "By: " + cardsArray[i].name)
+        addTextNodeToNode(userNode, "By: " + cardsArray[i].username)
         addTextNodeToNode(categoryNode, cardsArray[i].category)
         addTextNodeToNode(dateNode, ("0"+cardsArray[i].date.getDate()).slice(-2)+"."+months[cardsArray[i].date.getMonth()].substring(0,3)+"."+cardsArray[i].date.getFullYear())
 
@@ -67,5 +67,34 @@ function setFeaturedTopicsCards(){
 }
 
 function setFooterCards(){
+    const container = document.getElementById("footer-card-container")
+    for (let i = maxBlogPost-4; i < maxBlogPost; i++) {
+        const cardFrameNode = document.createElement("div")
+        const titleNode = document.createElement("div")
+        const imgFrame = document.createElement("div")
+        const descriptionNode = document.createElement("div")
+        const categoryNode = document.createElement("div")
+        const dateNode = document.createElement("time")
 
+        addTextNodeToNode(titleNode, cardsArray[i].title)
+        addTextNodeToNode(descriptionNode, cardsArray[i].description)
+        addTextNodeToNode(categoryNode, cardsArray[i].category)
+        addTextNodeToNode(dateNode, ("0" + cardsArray[i].date.getDate()).slice(-2) + "." + months[cardsArray[i].date.getMonth()].substring(0, 3) + "." + cardsArray[i].date.getFullYear())
+
+        cardFrameNode.setAttribute("class", "card-frame")
+        titleNode.setAttribute("class", "card-title footer-card-title")
+        imgFrame.setAttribute("class", "card-img footer-card-img")
+        descriptionNode.setAttribute("class", "card-description")
+        categoryNode.setAttribute("class", "card-category")
+        dateNode.setAttribute("class", "card-date")
+
+        imgFrame.appendChild(categoryNode)
+        imgFrame.style.backgroundImage = "url(" + cardsArray[i].img + ")"
+
+        cardFrameNode.appendChild(imgFrame)
+        cardFrameNode.appendChild(dateNode)
+        cardFrameNode.appendChild(titleNode)
+        cardFrameNode.appendChild(descriptionNode)
+        container.appendChild(cardFrameNode)
+    }
 }

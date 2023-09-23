@@ -64,3 +64,8 @@ footer{
     justify-self: center;
     opacity: 0.5;
 }
+
+.footer-buttons-item:hover{
+    opacity: 1;
+    cursor: pointer;
+}

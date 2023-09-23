@@ -1,6 +1,6 @@
 class Card{
-    get user() {
-        return this._user;
+    get username() {
+        return this._username;
     }
     get category() {
         return this._category;
@@ -17,12 +17,12 @@ class Card{
     get img() {
         return this._img;
     }
-    constructor(img, date, title, description, category, user) {
+    constructor(img, date, title, description, category, username) {
         this._img = img;
         this._date = date;
         this._title = title;
         this._description = description;
         this._category = category;
-        this._user = user
+        this._username = username
     }
 }
