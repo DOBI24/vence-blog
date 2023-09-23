@@ -269,4 +269,14 @@ main{
     color: var(--white_light);
 }
 
+#topics-bg-1, #topics-bg-2{
+    position: absolute;
+    width: 50%;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    z-index: -1;
+}
+
 /* -------------- */

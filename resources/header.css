@@ -24,14 +24,7 @@ a, a:link, a:visited, a:active, a:hover{
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: center;
-    transition: all 1s ease-in-out;
     z-index: -1;
-}
-
-#header-bg-1{
-}
-
-#header-bg-2{
 }
 
 header{
@@ -259,7 +252,7 @@ h2{
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 1000px) {
-    header{
-        height: 700px;
+    #header-bg-1, #header-bg-2{
+        height: 820px;
     }
 }
