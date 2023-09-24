@@ -9,7 +9,7 @@
 }
 
 .mobile-nav-selector div{
-    align-self: end;
+    align-self: flex-end;
     margin-right: 10px;
     height: 2px;
     background-color: var(--white_light);
@@ -21,7 +21,7 @@
 .mobile-nav-selector input{
     opacity: 0;
     position: absolute;
-    align-self: end;
+    align-self: flex-end;
     width: 40%;
     height: 32px;
 }

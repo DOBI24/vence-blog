@@ -1,100 +1,110 @@
 function setMainCards(){
-    const container = document.getElementById("cards-container")
-    for (let i = 0; i < maxBlogPost-7; i++) {
-        const cardFrameNode = document.createElement("div")
-        const titleNode = document.createElement("div")
-        const imgFrame = document.createElement("div")
-        const descriptionNode = document.createElement("div")
-        const userNode = document.createElement("div")
-        const categoryNode = document.createElement("div")
-        const dateNode = document.createElement("time")
-
-        addTextNodeToNode(titleNode, cardsArray[i].title)
-        addTextNodeToNode(descriptionNode, cardsArray[i].description)
-        addTextNodeToNode(userNode, "By: " + cardsArray[i].username)
-        addTextNodeToNode(categoryNode, cardsArray[i].category)
-        addTextNodeToNode(dateNode, ("0"+cardsArray[i].date.getDate()).slice(-2)+"."+months[cardsArray[i].date.getMonth()].substring(0,3)+"."+cardsArray[i].date.getFullYear())
-
-        cardFrameNode.setAttribute("class", "card-frame")
-        titleNode.setAttribute("class", "card-title")
-        imgFrame.setAttribute("class", "card-img")
-        descriptionNode.setAttribute("class", "card-description")
-        userNode.setAttribute("class", "card-user")
-        categoryNode.setAttribute("class", "card-category")
-        dateNode.setAttribute("class", "card-date")
-
-        imgFrame.appendChild(categoryNode)
-        imgFrame.style.backgroundImage = "url("+ cardsArray[i].img +")"
-
-        cardFrameNode.appendChild(imgFrame)
-        cardFrameNode.appendChild(dateNode)
-        cardFrameNode.appendChild(titleNode)
-        cardFrameNode.appendChild(descriptionNode)
-        cardFrameNode.appendChild(userNode)
-        container.appendChild(cardFrameNode)
-    }
+    setCards(
+        "cards-container",
+        0,
+        maxBlogPost-7,
+        "card-frame",
+        "card-title",
+        "card-description",
+        "card-date",
+        "card-img",
+        true,
+        true)
 }
 
 function setFeaturedTopicsCards(){
-    const container = document.getElementById("topics-cards-card")
-    for (let i = maxBlogPost-7; i < maxBlogPost-4; i++) {
+    setCards(
+        "topics-cards-card",
+        maxBlogPost-7,
+        maxBlogPost-4,
+        "topics-card",
+        "topics-card-title",
+        "topics-card-description card-date",
+        "topics-card-date card-date",
+        "topics-card-image",
+        false,
+        false,
+        true)
+}
+
+function setFooterCards(){
+    setCards(
+        "footer-card-container",
+        maxBlogPost-4,
+        maxBlogPost,
+        "card-frame",
+        "card-title footer-card-title",
+        "card-description",
+        "card-date",
+        "card-img footer-card-img",
+        false,
+        true)
+}
+
+function setCards(
+    containerID,
+    fromIndex,
+    toIndex,
+    cardFrameNodeClass,
+    titleNodeClass,
+    descriptionNodeClass,
+    dateNodeClass,
+    imgFrameClass,
+    usernode = false,
+    categorynode = false,
+    detailsnode = false
+    ){
+    const container = document.getElementById(containerID)
+    for (let i = fromIndex; i < toIndex; i++) {
         const cardFrameNode = document.createElement("div")
-        const detailsNode = document.createElement("div")
         const titleNode = document.createElement("div")
-        const imgFrame = document.createElement("div")
         const descriptionNode = document.createElement("div")
         const dateNode = document.createElement("time")
+        const imgFrame = document.createElement("div")
+        let detailsNode = null
+        let userNode = null
+        let categoryNode = null
+
+        if (usernode){
+            userNode = document.createElement("div")
+            addTextNodeToNode(userNode, "By: " + cardsArray[i].username)
+            console.log("card-user " + (typeof usernode == "string" ? usernode : ""))
+            userNode.setAttribute("class", "card-user " + (typeof usernode == "string" ? usernode : ""))
+        }
+        if (categorynode){
+            categoryNode = document.createElement("div")
+            addTextNodeToNode(categoryNode, cardsArray[i].category)
+            categoryNode.setAttribute("class", "card-category " + (typeof categorynode == "string" ? categorynode : ""))
+        }
 
         addTextNodeToNode(titleNode, cardsArray[i].title)
         addTextNodeToNode(descriptionNode, cardsArray[i].description)
         addTextNodeToNode(dateNode, ("0"+cardsArray[i].date.getDate()).slice(-2)+"."+months[cardsArray[i].date.getMonth()].substring(0,3)+"."+cardsArray[i].date.getFullYear())
-
-        cardFrameNode.setAttribute("class", "topics-card")
-        titleNode.setAttribute("class", "topics-card-title")
-        imgFrame.setAttribute("class", "topics-card-image")
-        descriptionNode.setAttribute("class", "topics-card-description card-date")
-        dateNode.setAttribute("class", "topics-card-date card-date")
-
         imgFrame.style.backgroundImage = "url("+ cardsArray[i].img +")"
 
-        detailsNode.appendChild(dateNode)
-        detailsNode.appendChild(titleNode)
-        detailsNode.appendChild(descriptionNode)
-        cardFrameNode.appendChild(imgFrame)
-        cardFrameNode.appendChild(detailsNode)
-        container.appendChild(cardFrameNode)
-    }
-}
+        cardFrameNode.setAttribute("class", cardFrameNodeClass)
+        titleNode.setAttribute("class", titleNodeClass)
+        descriptionNode.setAttribute("class", descriptionNodeClass)
+        dateNode.setAttribute("class", dateNodeClass)
+        imgFrame.setAttribute("class", imgFrameClass)
 
-function setFooterCards(){
-    const container = document.getElementById("footer-card-container")
-    for (let i = maxBlogPost-4; i < maxBlogPost; i++) {
-        const cardFrameNode = document.createElement("div")
-        const titleNode = document.createElement("div")
-        const imgFrame = document.createElement("div")
-        const descriptionNode = document.createElement("div")
-        const categoryNode = document.createElement("div")
-        const dateNode = document.createElement("time")
-
-        addTextNodeToNode(titleNode, cardsArray[i].title)
-        addTextNodeToNode(descriptionNode, cardsArray[i].description)
-        addTextNodeToNode(categoryNode, cardsArray[i].category)
-        addTextNodeToNode(dateNode, ("0" + cardsArray[i].date.getDate()).slice(-2) + "." + months[cardsArray[i].date.getMonth()].substring(0, 3) + "." + cardsArray[i].date.getFullYear())
-
-        cardFrameNode.setAttribute("class", "card-frame")
-        titleNode.setAttribute("class", "card-title footer-card-title")
-        imgFrame.setAttribute("class", "card-img footer-card-img")
-        descriptionNode.setAttribute("class", "card-description")
-        categoryNode.setAttribute("class", "card-category")
-        dateNode.setAttribute("class", "card-date")
-
-        imgFrame.appendChild(categoryNode)
-        imgFrame.style.backgroundImage = "url(" + cardsArray[i].img + ")"
+        if (categorynode) imgFrame.appendChild(categoryNode)
 
         cardFrameNode.appendChild(imgFrame)
-        cardFrameNode.appendChild(dateNode)
-        cardFrameNode.appendChild(titleNode)
-        cardFrameNode.appendChild(descriptionNode)
+        if (detailsnode){
+            detailsNode = document.createElement("div")
+            detailsNode.appendChild(dateNode)
+            detailsNode.appendChild(titleNode)
+            detailsNode.appendChild(descriptionNode)
+            cardFrameNode.appendChild(detailsNode)
+        }
+        else{
+            cardFrameNode.appendChild(dateNode)
+            cardFrameNode.appendChild(titleNode)
+            cardFrameNode.appendChild(descriptionNode)
+        }
+
+        if (usernode) cardFrameNode.appendChild(userNode)
         container.appendChild(cardFrameNode)
     }
 }

@@ -4,10 +4,7 @@ let bgHeaderID = true
 
 const setHeaderBG = async () => {
     const response = await fetch("https://api.slingacademy.com/v1/sample-data/photos?offset=114&limit=5")
-    const data = await response.json()
-
-    slideHeader(data)
-    setInterval(slideHeader, sliderTime*1000, data)
+    return await response.json()
 }
 
 function slideHeader(data){
@@ -35,4 +32,7 @@ function slideHeader(data){
     )
 }
 
-setHeaderBG()
+setHeaderBG().then(r => {
+    slideHeader(r)
+    setInterval(slideHeader, sliderTime*1000, r)
+})

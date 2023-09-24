@@ -3,13 +3,10 @@ let bgTopicsID = true
 
 const setTopicsBG = async () => {
     const response = await fetch("https://api.slingacademy.com/v1/sample-data/photos?offset=38&limit=5")
-    const data = await response.json()
-
-    slideTpoics(data)
-    setInterval(slideTpoics, sliderTime*1000, data)
+    return await response.json()
 }
 
-function slideTpoics(data){
+function slideTopics(data){
     document.getElementById("topics-bg-"+(bgTopicsID ? 1 : 2)).style.display = "block"
     document.getElementById("topics-bg-"+(bgTopicsID ? 2 : 1)).style.display = "none"
 
@@ -34,4 +31,7 @@ function slideTpoics(data){
     )
 }
 
-setTopicsBG()
+setTopicsBG().then(r => {
+    slideTopics(r)
+    setInterval(slideTopics, sliderTime*1000, r)
+})
