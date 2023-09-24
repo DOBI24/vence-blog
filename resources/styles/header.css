@@ -11,6 +11,7 @@
 
 .nav-dropdown-item:hover{
     border: none;
+    cursor: auto;
 }
 
 .nav-dropdown-item:hover .nav-dropdown{
@@ -28,6 +29,16 @@
 
 .nav-dropdown a:hover{
     opacity: 1;
+}
+
+.nav-item-label{
+    cursor: pointer;
+}
+
+.nav-item:has(> input:checked):has(> label[class="nav-item-label"]) {
+    opacity: 1;
+    border-bottom: 3px solid var(--brown);
+    border-radius: 1px;
 }
 
 .nav-search:hover .nav-search-input{

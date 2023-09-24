@@ -63,6 +63,10 @@
         grid-template-columns: 30% 70%;
     }
 
+    #cards-container{
+        grid-template-columns:repeat(3,1fr) !important;
+    }
+
     .header-flex-main{
         grid-column: 1 / span 2;
     }
@@ -127,7 +131,7 @@
     }
 
     #cards-container{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
         grid-column-gap: 15px;
     }
 
