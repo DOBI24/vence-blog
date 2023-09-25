@@ -16,6 +16,8 @@
 
 .nav-dropdown-item:hover .nav-dropdown{
     display: flex;
+    height: 180px;
+    padding:10px 20px;
 }
 
 .nav-dropdown a{
