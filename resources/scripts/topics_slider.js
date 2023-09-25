@@ -32,8 +32,6 @@ function slideTopics(data){
             topicsSliderID++
             if (topicsSliderID === 5) topicsSliderID = 0
 
-
-
             document.getElementById("topics-bg-"+(bgTopicsID ? 1 : 2)).animate(
                 {
                     transform: "translateX(100%)"

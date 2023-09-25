@@ -1,4 +1,4 @@
-let sliderTime = 5 //sec
+let sliderTime = 10 //sec
 let headerSliderID = 0
 let bgHeaderID = true
 let h_animationIndex = 0
@@ -32,14 +32,10 @@ function slideHeader(data){
             headerSliderID++
             if (headerSliderID === 5) headerSliderID = 0
 
-            document.getElementById("header-bg-"+(bgHeaderID ? 1 : 2)).style.left = "-100%"
-            document.getElementById("header-bg-"+(bgHeaderID ? 2 : 1)).style.left = "0"
-
             document.getElementById("header-bg-"+(bgHeaderID ? 1 : 2)).animate(
-                [
-                    { left: '0'},
-                    { left: '100%'}
-                ],
+                {
+                    transform: "translateX(100%)"
+                },
                 {
                     duration: 1000,
                     iterations: 1,
@@ -47,10 +43,9 @@ function slideHeader(data){
                 }
             )
             document.getElementById("header-bg-"+(bgHeaderID ? 2 : 1)).animate(
-                [
-                    { left: '-100%'},
-                    { left: '0'}
-                ],
+                {
+                    transform: "translateX(0)"
+                },
                 {
                     duration: 1000,
                     iterations: 1,
@@ -58,6 +53,8 @@ function slideHeader(data){
                 }
             )
             setTimeout(function(){
+                document.getElementById("header-bg-"+(bgHeaderID ? 1 : 2)).style.transform = "translateX(-100%)"
+                document.getElementById("header-bg-"+(bgHeaderID ? 2 : 1)).style.transform = "translateX(0)"
                 document.getElementById("header-bg-"+(bgHeaderID ? 1 : 2)).style.backgroundImage = "url(" + data.photos[headerSliderID].url + ")"
                 bgHeaderID = !bgHeaderID
             }, 1000)
